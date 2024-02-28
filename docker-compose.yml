@@ -1,0 +1,11 @@
+version: '3.8'
+services:
+  db-dev:
+    image: mysql:latest
+    ports:
+      - 1234:2345
+    environment:
+      - MYSQL_USER=mysql
+      - MYSQL_PASSWORD=123
+      - MYSQL_DB=appointments
+      - MYSQL_ALLOW_EMPTY_PASSWORD=true
