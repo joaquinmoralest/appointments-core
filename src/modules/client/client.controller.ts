@@ -2,6 +2,7 @@ import { Body, Controller, Get, HttpStatus, Post, Res } from '@nestjs/common';
 import { ClientService } from './client.service';
 import { Response } from 'express';
 import { AppDataSource } from '../..';
+import { ClientDto } from './dto/client.dto';
 
 @Controller('client')
 export class ClientController {
@@ -15,7 +16,7 @@ export class ClientController {
   }
 
   @Post('createClient')
-  async createClient(@Body() clientDto, @Res() res: Response) {
+  async createClient(@Body() clientDto: ClientDto, @Res() res: Response) {
     return AppDataSource.manager.transaction(async (entityManager) => {
       const client = await this.clientService.createClient(
         clientDto,
