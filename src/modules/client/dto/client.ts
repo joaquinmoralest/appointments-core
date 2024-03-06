@@ -1,5 +1,5 @@
 import { IsEmail, IsOptional } from 'class-validator';
-import { ClientInterface } from '../interfaces/client.interface';
+import { ClientInterface } from '../interfaces/client';
 
 export class ClientDto implements ClientInterface {
   id: string;

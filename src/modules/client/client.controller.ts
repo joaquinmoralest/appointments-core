@@ -2,7 +2,7 @@ import { Body, Controller, Get, HttpStatus, Post, Res } from '@nestjs/common';
 import { ClientService } from './client.service';
 import { Response } from 'express';
 import { AppDataSource } from '../..';
-import { ClientDto } from './dto/client.dto';
+import { ClientDto } from './dto/client';
 
 @Controller('client')
 export class ClientController {

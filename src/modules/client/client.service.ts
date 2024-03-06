@@ -1,7 +1,7 @@
 import { Injectable } from '@nestjs/common';
 // import { CreateClientDB } from './models/client.model';
-import { ClientRepository } from './repositories/client.repository';
-import { ClientInterface } from './interfaces/client.interface';
+import { ClientRepository } from './repositories/client';
+import { ClientInterface } from './interfaces/client';
 import { EntityManager } from 'typeorm';
 
 @Injectable({})

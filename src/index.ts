@@ -1,5 +1,5 @@
 import { DataSource } from 'typeorm';
-import { Client } from './entities/Client.entity';
+import { Client } from './entities/Client';
 import 'reflect-metadata';
 
 export const AppDataSource = new DataSource({
