@@ -22,6 +22,23 @@ export class ClientRepository {
     return clients;
   }
 
+  async getClientById(clientId: string) {
+    let getClient;
+
+    try {
+      getClient = await this.clientRepository.findOne({
+        where: { id: clientId },
+      });
+    } catch (error) {
+      console.log('No se encontre el cliente', error);
+    }
+
+    let client: ClientInterface = null;
+
+    client = new ClientObject(getClient);
+    return client;
+  }
+
   async createClient(clientDto, entityManager): Promise<ClientInterface> {
     const clientToSave = new ClientObject(clientDto);
 

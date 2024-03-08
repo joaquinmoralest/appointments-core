@@ -13,8 +13,14 @@ export class ClientService {
 
   async getAllClients() {
     this.clients = await this.clientRepository.getAllClients();
-
     return { ok: true, data: this.clients, message: 'Get All Clients Ok!' };
+  }
+
+  async getClientById(queryParams) {
+    const { clientId } = queryParams;
+
+    this.client = await this.clientRepository.getClientById(clientId);
+    return { ok: true, data: this.client, message: 'Get Client By Id Ok!' };
   }
 
   async createClient(clientDto, entityManager: EntityManager) {
@@ -22,7 +28,6 @@ export class ClientService {
       clientDto,
       entityManager,
     );
-
     return { ok: true, data: this.client, message: 'Create Client Ok!' };
   }
 }

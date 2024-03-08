@@ -1,4 +1,12 @@
-import { Body, Controller, Get, HttpStatus, Post, Res } from '@nestjs/common';
+import {
+  Body,
+  Controller,
+  Get,
+  HttpStatus,
+  Post,
+  Query,
+  Res,
+} from '@nestjs/common';
 import { ClientService } from './client.service';
 import { Response } from 'express';
 import { AppDataSource } from '../..';
@@ -11,8 +19,13 @@ export class ClientController {
   @Get('getAllClients')
   async getAllClients(@Res() res: Response) {
     const clients = await this.clientService.getAllClients();
-
     return res.status(HttpStatus.OK).send(clients);
+  }
+
+  @Get('getClientById')
+  async getClientById(@Query() queryParams, @Res() res: Response) {
+    const client = await this.clientService.getClientById(queryParams);
+    return res.status(HttpStatus.OK).send(client);
   }
 
   @Post('createClient')
