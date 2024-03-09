@@ -18,7 +18,13 @@ export class Company {
   phone: string;
 
   @Column('varchar', {
+    length: 100,
+  })
+  email: string;
+
+  @Column('varchar', {
     length: 200,
+    nullable: true,
   })
   url: string;
 
@@ -27,6 +33,6 @@ export class Company {
   })
   logoUrl: string;
 
-  @Column('int')
+  @Column('int', { nullable: true })
   locationId: string;
 }

@@ -4,7 +4,7 @@ import { Client } from '../../../entities/Client';
 import { ClientObject } from '../models/client';
 
 export class ClientRepository {
-  clientRepository = AppDataSource.getRepository(Client);
+  private clientRepository = AppDataSource.getRepository(Client);
 
   async getAllClients() {
     let getClients;
