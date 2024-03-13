@@ -1,7 +1,7 @@
-import { ClientInterface } from '../interfaces/client';
+import { ClientInterface } from '../interfaces/client.interface';
 import { AppDataSource } from '../../..';
-import { Client } from '../../../entities/Client';
-import { ClientObject } from '../models/client';
+import { Client } from '../../../entities/Client.entity';
+import { ClientObject } from '../models/client.model';
 
 export class ClientRepository {
   private clientRepository = AppDataSource.getRepository(Client);

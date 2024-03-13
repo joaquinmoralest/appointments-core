@@ -1,7 +1,6 @@
 import { Injectable } from '@nestjs/common';
-// import { CreateClientDB } from './models/client.model';
-import { ClientRepository } from './repositories/client';
-import { ClientInterface } from './interfaces/client';
+import { ClientRepository } from './repositories/client.repository';
+import { ClientInterface } from './interfaces/client.interface';
 import { EntityManager } from 'typeorm';
 
 @Injectable({})
@@ -24,10 +23,7 @@ export class ClientService {
   }
 
   async createClient(clientDto, entityManager: EntityManager) {
-    this.client = await this.clientRepository.createClient(
-      clientDto,
-      entityManager,
-    );
+    this.client = await this.clientRepository.createClient(clientDto, entityManager);
     return { ok: true, data: this.client, message: 'Create Client Ok!' };
   }
 }

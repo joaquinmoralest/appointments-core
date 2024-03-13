@@ -1,9 +1,9 @@
 import { DataSource } from 'typeorm';
-import { Client } from './entities/Client';
+import { Client } from './entities/Client.entity';
 import 'reflect-metadata';
-import { Company } from './entities/Company';
-import { Location } from './entities/Location';
-import { Appointment } from './entities/Appointment';
+import { Company } from './entities/Company.entity';
+import { Location } from './entities/Location.entity';
+import { Appointment } from './entities/Appointment.entity';
 
 export const AppDataSource = new DataSource({
   type: 'mysql',

@@ -1,6 +1,6 @@
 import { Injectable } from '@nestjs/common';
-import { CompanyInterface } from './interfaces/company';
-import { CompanyRepository } from './repositories/company';
+import { CompanyInterface } from './interfaces/company.interface';
+import { CompanyRepository } from './repositories/company.repository';
 import { EntityManager } from 'typeorm';
 
 @Injectable({})

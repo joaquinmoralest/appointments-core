@@ -9,7 +9,7 @@ import {
 } from '@nestjs/common';
 import { CompanyService } from './company.service';
 import { Response } from 'express';
-import { CompanyDto } from './dto/company';
+import { CompanyDto } from './dto/company.dto';
 import { AppDataSource } from '../..';
 
 @Controller('company')

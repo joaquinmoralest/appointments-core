@@ -1,7 +1,7 @@
 import { AppDataSource } from '../../..';
-import { Company } from '../../../entities/Company';
-import { CompanyInterface } from '../interfaces/company';
-import { CompanyObject } from '../models/company';
+import { Company } from '../../../entities/Company.entity';
+import { CompanyInterface } from '../interfaces/company.interface';
+import { CompanyObject } from '../models/company.model';
 
 export class CompanyRepository {
   private companyRepository = AppDataSource.getRepository(Company);

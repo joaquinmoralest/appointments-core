@@ -1,5 +1,5 @@
-import { Client } from '../../../entities/Client';
-import { ClientInterface } from '../interfaces/client';
+import { Client } from '../../../entities/Client.entity';
+import { ClientInterface } from '../interfaces/client.interface';
 
 export class ClientObject implements ClientInterface {
   id: string;

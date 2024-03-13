@@ -1,5 +1,5 @@
-import { IsEmail, IsOptional } from 'class-validator';
-import { ClientInterface } from '../interfaces/client';
+import { IsEmail, IsOptional, IsString } from 'class-validator';
+import { ClientInterface } from '../interfaces/client.interface';
 
 export class ClientDto implements ClientInterface {
   id: string;
@@ -7,6 +7,7 @@ export class ClientDto implements ClientInterface {
   lastName: string;
 
   @IsOptional()
+  @IsString()
   fullName: string;
 
   @IsOptional()

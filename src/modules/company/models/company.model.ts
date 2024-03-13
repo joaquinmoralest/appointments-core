@@ -1,5 +1,5 @@
-import { Company } from '../../../entities/Company';
-import { CompanyInterface } from '../interfaces/company';
+import { Company } from '../../../entities/Company.entity';
+import { CompanyInterface } from '../interfaces/company.interface';
 
 export class CompanyObject implements CompanyInterface {
   id: string;
