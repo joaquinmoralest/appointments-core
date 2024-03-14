@@ -1,4 +1,5 @@
 import { Client } from '../../../entities/Client.entity';
+import { ClientDto } from '../dto';
 import { ClientInterface } from '../interfaces/client.interface';
 
 export class ClientObject implements ClientInterface {
@@ -8,7 +9,7 @@ export class ClientObject implements ClientInterface {
   fullName?: string;
   email?: string;
   phone?: string;
-  constructor(clientDto) {
+  constructor(clientDto: ClientDto) {
     const client: Client = new Client();
 
     client.firstName = clientDto.firstName;

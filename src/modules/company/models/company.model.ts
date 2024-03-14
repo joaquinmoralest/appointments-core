@@ -1,4 +1,5 @@
 import { Company } from '../../../entities/Company.entity';
+import { CompanyDto } from '../dto/company.dto';
 import { CompanyInterface } from '../interfaces/company.interface';
 
 export class CompanyObject implements CompanyInterface {
@@ -10,7 +11,7 @@ export class CompanyObject implements CompanyInterface {
   logoUrl: string;
   locationId?: string;
 
-  constructor(companyDto) {
+  constructor(companyDto: CompanyDto) {
     const company: Company = new Company();
 
     company.name = companyDto.name;

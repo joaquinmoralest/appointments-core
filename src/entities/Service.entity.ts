@@ -14,6 +14,7 @@ export class Service {
 
   @Column('varchar', {
     length: 300,
+    nullable: true,
   })
   description: string;
 

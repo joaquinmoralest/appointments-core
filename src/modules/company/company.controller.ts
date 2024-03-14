@@ -1,12 +1,4 @@
-import {
-  Body,
-  Controller,
-  Get,
-  HttpStatus,
-  Post,
-  Query,
-  Res,
-} from '@nestjs/common';
+import { Body, Controller, Get, HttpStatus, Post, Query, Res } from '@nestjs/common';
 import { CompanyService } from './company.service';
 import { Response } from 'express';
 import { CompanyDto } from './dto/company.dto';
@@ -31,10 +23,7 @@ export class CompanyController {
   @Post('createCompany')
   async createCompany(@Body() companyDto: CompanyDto, @Res() res: Response) {
     return AppDataSource.manager.transaction(async (entityManager) => {
-      const company = await this.companyService.createCompany(
-        companyDto,
-        entityManager,
-      );
+      const company = await this.companyService.createCompany(companyDto, entityManager);
       return res.status(HttpStatus.OK).send(company);
     });
   }

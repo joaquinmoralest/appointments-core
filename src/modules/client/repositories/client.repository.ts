@@ -2,6 +2,7 @@ import { ClientInterface } from '../interfaces/client.interface';
 import { AppDataSource } from '../../..';
 import { Client } from '../../../entities/Client.entity';
 import { ClientObject } from '../models/client.model';
+import { ClientDto } from '../dto';
 
 export class ClientRepository {
   private clientRepository = AppDataSource.getRepository(Client);
@@ -39,7 +40,7 @@ export class ClientRepository {
     return client;
   }
 
-  async createClient(clientDto, entityManager): Promise<ClientInterface> {
+  async createClient(clientDto: ClientDto, entityManager): Promise<ClientInterface> {
     const clientToSave = new ClientObject(clientDto);
 
     let clientSaved;

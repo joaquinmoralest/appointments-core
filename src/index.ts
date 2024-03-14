@@ -4,6 +4,7 @@ import 'reflect-metadata';
 import { Company } from './entities/Company.entity';
 import { Location } from './entities/Location.entity';
 import { Appointment } from './entities/Appointment.entity';
+import { Service } from './entities';
 
 export const AppDataSource = new DataSource({
   type: 'mysql',
@@ -13,7 +14,7 @@ export const AppDataSource = new DataSource({
   password: '',
   database: 'booking',
   synchronize: true,
-  entities: [Client, Company, Location, Appointment],
+  entities: [Client, Company, Location, Appointment, Service],
   logging: true,
 });
 

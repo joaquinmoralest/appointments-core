@@ -1,5 +1,6 @@
 import { AppDataSource } from '../../..';
 import { Company } from '../../../entities/Company.entity';
+import { CompanyDto } from '../dto/company.dto';
 import { CompanyInterface } from '../interfaces/company.interface';
 import { CompanyObject } from '../models/company.model';
 
@@ -16,9 +17,7 @@ export class CompanyRepository {
     }
 
     const companies: CompanyInterface[] = [];
-    getCompanies.forEach((company) =>
-      companies.push(new CompanyObject(company)),
-    );
+    getCompanies.forEach((company) => companies.push(new CompanyObject(company)));
 
     return companies;
   }
@@ -38,9 +37,8 @@ export class CompanyRepository {
     return company;
   }
 
-  async createCompany(companyDto, entityManager) {
+  async createCompany(companyDto: CompanyDto, entityManager) {
     const companyToSave = new CompanyObject(companyDto);
-    console.log(companyToSave);
 
     let companySaved;
     try {
